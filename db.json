@@ -1,41 +1,43 @@
-[
-  {
-    "id": "5dd923991e9be5e5bb415062",
-    "providerId": "5dd92399b80fcdb68ce3a0ec",
-    "providerName": "AWS",
-    "cloudAccount": "AWS Release",
-    "region": "North America",
-    "result": 55,
-    "runBy": "Schedule",
-    "createdAt": "2018-04-15T07:05:17 -03:00",
-    "finishedAt": "2019-07-05T11:37:13 -03:00",
-    "name": "Mendez Cameron",
-    "picture": "http://placehold.it/32x32"
-  },
-  {
-    "id": "5dd92399424df81fd55e510b",
-    "providerId": "5dd92399a13339638e27e209",
-    "providerName": "ORACLE",
-    "cloudAccount": "AWS Release",
-    "region": "Europe West",
-    "result": 31,
-    "runBy": "System",
-    "createdAt": "2018-09-25T08:12:53 -03:00",
-    "finishedAt": "2018-07-26T09:08:48 -03:00",
-    "name": "Mayra Roman",
-    "picture": "http://placehold.it/32x32"
-  },
-  {
-    "id": "5dd923999ad1b4953f12a354",
-    "providerId": "5dd92399dac6f9e41554b527",
-    "providerName": "GCP",
-    "cloudAccount": "AWS Release",
-    "region": "North America",
-    "result": 26,
-    "runBy": "System",
-    "createdAt": "2018-12-12T10:43:29 -02:00",
-    "finishedAt": "2019-07-29T07:26:05 -03:00",
-    "name": "Melendez Colon",
-    "picture": "http://placehold.it/32x32"
-  }
-]
+{
+  "history": [
+    {
+      "id": "5dd923991e9be5e5bb415062",
+      "providerId": "5dd92399b80fcdb68ce3a0ec",
+      "providerName": "AWS",
+      "cloudAccount": "AWS Release",
+      "region": "North America",
+      "result": 55,
+      "runBy": "Schedule",
+      "createdAt": "2018-04-15T07:05:17 -03:00",
+      "finishedAt": "2019-07-05T11:37:13 -03:00",
+      "name": "Mendez Cameron",
+      "picture": "http://placehold.it/32x32"
+    },
+    {
+      "id": "5dd92399424df81fd55e510b",
+      "providerId": "5dd92399a13339638e27e209",
+      "providerName": "ORACLE",
+      "cloudAccount": "AWS Release",
+      "region": "Europe West",
+      "result": 31,
+      "runBy": "System",
+      "createdAt": "2018-09-25T08:12:53 -03:00",
+      "finishedAt": "2018-07-26T09:08:48 -03:00",
+      "name": "Mayra Roman",
+      "picture": "http://placehold.it/32x32"
+    },
+    {
+      "id": "5dd923999ad1b4953f12a354",
+      "providerId": "5dd92399dac6f9e41554b527",
+      "providerName": "GCP",
+      "cloudAccount": "AWS Release",
+      "region": "North America",
+      "result": 26,
+      "runBy": "System",
+      "createdAt": "2018-12-12T10:43:29 -02:00",
+      "finishedAt": "2019-07-29T07:26:05 -03:00",
+      "name": "Melendez Colon",
+      "picture": "http://placehold.it/32x32"
+    }
+  ]
+}
