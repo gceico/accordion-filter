@@ -9,39 +9,39 @@ export const CHANGE_FILTERS_FAIL = 'CHANGE_FILTERS_FAIL'
 
 export const getFilters = async ({ filtersContext, data }) => {
   const { filters, touched } = filtersContext
-  let newFilters = Object.create(filters)
+  const newFilters = filters
   filtersContext.dispatch({
     type: GET_FILTERS
   })
+    _.map(data, ({ providerName, cloudAccount }) => {
+      newFilters.providerName[providerName] === undefined
+        ? (newFilters.providerName[providerName] = {
+            count: 0,
+            checked: false,
+            name: providerName,
+            group: 'providerName'
+          })
+        : newFilters.providerName[providerName].count++
 
-  _.map(data, ({ providerName, cloudAccount }) => {
-    newFilters.providerName[providerName] === undefined
-      ? (newFilters.providerName[providerName] = {
-          count: 0,
-          checked: false,
-          name: providerName,
-          group: 'providerName'
-        })
-      : newFilters.providerName[providerName].count++
+      newFilters.cloudAccount[cloudAccount] === undefined
+        ? (newFilters.cloudAccount[cloudAccount] = {
+            count: 0,
+            checked: false,
+            name: cloudAccount,
+            group: 'cloudAccount'
+          })
+        : newFilters.cloudAccount[cloudAccount].count++
+    })
 
-    newFilters.cloudAccount[cloudAccount] === undefined
-      ? (newFilters.cloudAccount[cloudAccount] = {
-          count: 0,
-          checked: false,
-          name: cloudAccount,
-          group: 'cloudAccount'
-        })
-      : newFilters.cloudAccount[cloudAccount].count++
-  })
   try {
-    if (!touched) {
-      filtersContext.dispatch({
-        type: GET_FILTERS_SUCCESS,
-        payload: newFilters
-      })
-    } else {
-      throw new Error('Filters already initialized')
-    }
+   if(!touched){
+    filtersContext.dispatch({
+      type: GET_FILTERS_SUCCESS,
+      payload: newFilters
+    })
+   }else{
+     throw new Error('Filters already initialized')
+   }
   } catch (err) {
     const errors = _.get(err, 'message')
     filtersContext.dispatch({
