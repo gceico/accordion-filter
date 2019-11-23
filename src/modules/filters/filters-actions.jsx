@@ -33,10 +33,8 @@ export const getFilters = async ({ filtersContext, data }) => {
         })
       : newFilters.cloudAccount[cloudAccount].count++
   })
-  console.log(filters, newFilters)
   try {
     if (!touched) {
-      console.log('aici')
       filtersContext.dispatch({
         type: GET_FILTERS_SUCCESS,
         payload: newFilters
