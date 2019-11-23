@@ -1,8 +1,18 @@
 import { generateContext } from '../../helpers'
-import { GET_HISTORY, GET_HISTORY_FAIL, GET_HISTORY_SUCCESS } from './history-actions'
+import {
+  DELETE_HISTORY,
+  DELETE_HISTORY_FAIL,
+  DELETE_HISTORY_SUCCESS,
+  GET_HISTORY,
+  GET_HISTORY_FAIL,
+  GET_HISTORY_SUCCESS,
+} from './history-actions'
 
 const initialState = {
-  loading: false
+  history: [],
+  deleted: {},
+  loading: false,
+  error: undefined
 }
 
 const reducer = (state, action) => {
@@ -15,13 +25,31 @@ const reducer = (state, action) => {
     case GET_HISTORY_SUCCESS:
       return {
         ...state,
+        history: action.payload,
         loading: false
       }
     case GET_HISTORY_FAIL:
       return {
         ...state,
-        loading: false
+        loading: false,
+        error: action.payload
       }
+      case DELETE_HISTORY:
+        return {
+          ...state,
+          loading: true
+        }
+      case DELETE_HISTORY_SUCCESS:
+        return {
+          ...state,
+          loading: false
+        }
+      case DELETE_HISTORY_FAIL:
+        return {
+          ...state,
+          loading: false,
+          error: action.payload
+        }
     default:
       return state
   }

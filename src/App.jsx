@@ -1,11 +1,17 @@
-import './App.css'
-
 import React from 'react'
 
-import History from './modules/history'
+import { FiltersContextProvider } from './modules/filters/filters-context'
+import { HistoryContextProvider } from './modules/history/history-context'
+import HistoryList from './modules/history/views/history-list'
 
 function App() {
-  return <History />
+  return (
+    <HistoryContextProvider>
+      <FiltersContextProvider>
+        <HistoryList />
+      </FiltersContextProvider>
+    </HistoryContextProvider>
+  )
 }
 
 export default App
