@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/accordion-filter/precache-manifest.8720348abb182be557be8fa1c6aaf5f4.js"
+  "/accordion-filter/precache-manifest.fe39ffe09bcf782ad19049799326b8fc.js"
 );
 
 self.addEventListener('message', (event) => {
