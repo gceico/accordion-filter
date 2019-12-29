@@ -6,6 +6,9 @@ import { FiltersContext } from '../../filters/filters-context'
 import Filters from '../../filters/views/filters'
 import { deleteHistory, getHistory } from '../history-actions'
 import { HistoryContext } from '../history-context'
+import { HistoryMain, HistoryPage, HistorySidebar } from '../history-styles'
+
+
 
 export default function HistoryList() {
   const historyContext = useContext(HistoryContext)
@@ -24,12 +27,15 @@ export default function HistoryList() {
     return <div>loading...</div>
   }
   return (
-    <>
-      <Filters
+    <HistoryPage>
+     <HistorySidebar>
+     <Filters
         data={history}
         fetchFunction={filters => getHistory({ historyContext, filters })}
       />
-      <Table aria-label='simple table'>
+     </HistorySidebar>
+     <HistoryMain>
+     <Table aria-label='simple table'>
         <TableHead>
           <TableRow>
             <TableCell>Picture</TableCell>
@@ -71,6 +77,7 @@ export default function HistoryList() {
           ))}
         </TableBody>
       </Table>
-    </>
+     </HistoryMain>
+    </HistoryPage>
   )
 }
